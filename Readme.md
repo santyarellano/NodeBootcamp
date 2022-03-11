@@ -24,7 +24,45 @@ npm init -y
 
 Para crear un servidor, podemos hacerlo mediante una configuración completa de un servicio HTTP, o podemos utilizar Express, una librería que simplifica el proceso de nuestra parte. En este caso usaremos Express para agilizar el proceso.
 
-Lo primero que debemos hacer es instalar express.
+Lo primero que debemos hacer es instalar express ejecutando:
+
+```
+npm install express
+```
+
+Una vez que tenemos eso listo, podemos crear el archivo que definirá nuestro servidor. En este caso lo llamaremos **server.js**.
+
+En server.js, lo primero que debemos hacer es importar express e inicializarlo, eso lo hacemos con las siguientes líneas:
+
+```
+const express = require('express');
+const app = express();
+```
+
+Luego, debemos definir cómo vamos a manejar las peticiones GET (también se puede definir cómo se maneja una petición POST, y otros tipos de peticiones, pero por el momento sólo manejaremos GET). Esto lo hacemos con las siguientes líneas:
+
+```
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+});
+```
+
+> Como podemos observar, el primer parámetro es la ruta de nuestro URL, en este caso la respuesta que estamos definiendo sólo funcionará con la ruta '/'.
+
+Y por último, debemos inicializar el servidor, para esto sólo debemos indicarle a express sobre qué puerto debe funcionar:
+
+```
+app.listen(3000, () => console.log('Server is running on port 3000'));
+```
+
+Ejecutamos lo siguiente:
+```
+node server.js
+```
+
+Y listo, nuestro servidor ya estará activo en **localhost:3000**.
+
+
 
 # Fuentes
 
