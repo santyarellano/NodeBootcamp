@@ -64,6 +64,6 @@ Y listo, nuestro servidor ya estará activo en **localhost:3000**.
 
 
 
-# Fuentes
+# Recursos
 
 - [How to Get Started With Node.js and Express](https://www.digitalocean.com/community/tutorials/nodejs-express-basics)
