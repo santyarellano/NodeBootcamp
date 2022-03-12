@@ -2,7 +2,7 @@
 
 ## Setup inicial
 
-Antes de poder empezar con el proyecto, es necesario tener instalado node. Para pueden ir al sitio oficial de Node, descargarlo e instalarlo:
+Antes de poder empezar con el proyecto, es necesario tener instalado node. Para esto pueden ir al sitio oficial de Node, descargarlo e instalarlo:
 
 > [Download | Node.js (nodejs.org)](https://nodejs.org/en/download/)
 
@@ -56,14 +56,50 @@ app.listen(3000, () => console.log('Server is running on port 3000'));
 ```
 
 Ejecutamos lo siguiente:
+
 ```
 node server.js
 ```
 
 Y listo, nuestro servidor ya estará activo en **localhost:3000**.
 
+> Si buscas un tutorial más completo, que explique cómo utilizar archivos HTML para el front, puedes consultar [este video](https://www.youtube.com/watch?v=wxbQP1LMZsw).
 
+## Tipos de DB
 
-# Recursos
+Con node js tenemos 2 opciones para bases de datos, una es usar una base de datos tipo SQL (relacional), y otra es NoSQL (no relacional). Para términos de simplicidad, en este "bootcamp" se sugiere que usemos versiones ligeras (no aptas para un producto escalable), que nos permitan probar rápidamente el funcionamiento de cada tipo de base de datos con Node.
+
+- Para quienes quieran probar SQL, se sugiere usar **SQLite**.
+
+  - Si buscan un video tutorial para empezar [este video es una opción](https://www.youtube.com/watch?v=xDYx5UdHwv0).
+
+- Para quienes busquen probar NoSQL, se sugiere usar **NeDB**.
+  - Si buscan un video de apoyo para entender cómo funciona, [este video](https://www.youtube.com/watch?v=xVYa20DCUv0) es una opción. (este video es parte de una serie de tutoriales de Node, por lo que asume que ya entiendes como tratar una petición POST, si gustas puedes consultar los videos anteriores de la serie para una mayor comprensión).
+
+# EL RETO
+
+Como recordarán, el objetivo del bootcamp es lo siguiente:
+
+1. Probar que podamos aprender dichas tecnologías en un tiempo reducido (es decir, que la curva de aprendizaje no sea demasiado alta).
+
+2. Identificar si nos gustaría usar esta tecnología para el proyecto de Casa Mosaico.
+
+3. Identificar si esta tecnología es capaz de cumplir con las necesidades del proyecto de Casa Mosaico.
+
+4. De ser posible, probar algunos aspectos de la arquitectura. Por el momento únicamente he identificado que podemos probar cuál de ambas opciones (SQL y NoSQL) se puede adaptar más a cambios de requisitos.
+
+Por lo tanto, su misión, si deciden aceptarla, es crear un sitio sencillo que nos permita crear y elimitar tareas (un to-do list).
+
+Básicamente sólo necesitarán crear una base de datos, con una tabla que almacene las tareas, encontrar una manera de insertarlas, eliminarlas, y crear una interfáz para que un "usuario" pueda usar el sitio.
+
+> **RETO DE PRUEBA DE ARQUITECTURA:** Una vez que hayas terminado el sitio básico del to-do list (es decir, las instrucciones que justo se mencionaron), intenta cambiar la estructura general del back. Una manera de hacer esto es haciendo que existan usuarios, y que cada usuario tenga su propia lista y nadie más pueda verla. Esto debes hacerlo sin eliminar en ningún momento las tablas (es decir, no puedes copiarlas, eliminar lo que tenías, y crear una nueva pegando los datos que tenías anteriormente). En otras palabras, intenta cambiarle el motor al coche mientras está en movimiento, sin apagarlo ni desconectarlo jeje.
+
+## Mensaje "motivador"
+
+Recordemos que esta tecnología fue sugerida por el profe Lalo, y es la que usa para sus clases de **BLOQUE 1** (una manera muy sutíl de decir que si no podemos aprender a usar esto, estamos más weyes que esos weyes).
+
+## Mucha suerte y ojalá disfruten el experimento :)
+
+# Recursos Consultados
 
 - [How to Get Started With Node.js and Express](https://www.digitalocean.com/community/tutorials/nodejs-express-basics)
