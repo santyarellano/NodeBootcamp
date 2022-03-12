@@ -1,5 +1,3 @@
-
-
 function task_submit() {
     let task_input = document.getElementById("task_input");
     let task_txt = task_input.value;
@@ -20,3 +18,16 @@ function task_submit() {
 
     task_input.value = "";
 }
+
+function update_list() {
+    let div = document.getElementById("list_div");
+    div.innerHTML = "";
+
+    // get data from db
+    fetch('/api').then(resp => {
+        console.log(resp);
+    });
+}
+
+// SETUP
+update_list();
