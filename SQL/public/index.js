@@ -13,7 +13,7 @@ function task_submit() {
     };
 
     fetch('/api', options).then(response => {
-        console.log(response.json());
+        //console.log(response.json());
     }); // post
 
     task_input.value = "";
