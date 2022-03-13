@@ -24,3 +24,10 @@ app.post('/api', (req, resp) => {
         data: req.body
     });
 });
+
+// Manage GET request (get tasks)
+app.get('/api', (req, resp) => {
+    db.find({}, (err, data) => {
+        resp.json(data);
+    });
+});

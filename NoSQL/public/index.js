@@ -20,8 +20,18 @@ async function task_submit() {
 }
 
 async function update_list() {
-    // TO DO...
-    console.log("Hello");
+    // Query db for tasks
+    const response = await fetch('/api');
+    const data = await response.json();
+
+    // Add tasks to div
+    let div = document.getElementById('list_div');
+    div.innerHTML = "";
+    data.forEach((row) => {
+        div.innerHTML += row.task_txt + '<br>';
+    });
+
+    //console.log(data);
 }
 
 // SETUP
