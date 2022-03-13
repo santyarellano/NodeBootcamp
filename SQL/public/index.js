@@ -17,6 +17,7 @@ function task_submit() {
     }); // post
 
     task_input.value = "";
+    update_list();
 }
 
 function update_list() {
@@ -24,8 +25,17 @@ function update_list() {
     div.innerHTML = "";
 
     // get data from db
-    fetch('/api').then(resp => {
-        console.log(resp);
+    fetch('/get_tasks').then(resp => {
+        resp.json().then((res) => {
+
+            res.data.forEach(row => {
+                let txt = document.createElement("div");
+                txt.innerHTML += row.task;
+
+                div.appendChild(txt);
+            });
+            
+        });
     });
 }
 

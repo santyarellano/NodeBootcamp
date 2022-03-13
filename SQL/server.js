@@ -39,25 +39,32 @@ app.post('/api', (req, resp) => {
 });
 
 // MANAGE GET REQUESTS (GET TASKS)
-app.get('/api', (req, resp) => {
-    resp.json({
-        status: 'success',
-        data: selectAll().json()
+app.get('/get_tasks', (req, resp) => {
+    dbQuery("SELECT * FROM tasks").then((res) => {
+        resp.json({
+            status: 'success',
+            data: res
+        });
     });
 });
 
 // ---------- SQL FUNCTIONS -----------
-function selectAll() {
-    let sql = 'select * from tasks';
-    db.all(
-        sql, [],
-        (err, resp) => {
-            if (err) return console.error(err.message);
-            
-            console.log(resp);
-            return resp;
-        }
-    );
+
+async function dbQuery(query) {
+    const promise = await new Promise((resolve, reject) => {
+        db.all(
+            query, [],
+            (err, rows) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(rows);
+            }
+        );
+    });
+
+    let ret = await promise;
+    return ret;
 }
 
 function dropTable() {
@@ -85,4 +92,3 @@ function createTable() {
 }
 
 // execute
-console.log(selectAll());
